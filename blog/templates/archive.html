@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+{% for post in posts %}
+<h2><a href='/blog/article/{{ post.id }}/'>{{ post.title }}</a></h2>
+<p>{{ post.timestamp }}</p>
+{% endfor %}
+<h3><a href='/blog/new/'>Add new</a></h3>
+{% endblock %}
