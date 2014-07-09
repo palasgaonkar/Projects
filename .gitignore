@@ -1,0 +1,11 @@
+*.pyc
+*.pyo
+*~
+*.sqlite
+.project
+.pydevproject
+*.swp
+*.bak
+main/settings.py
+*.log
+*.db
