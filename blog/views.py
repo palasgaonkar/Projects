@@ -1,7 +1,9 @@
+from datetime import datetime
+
 from django.template import loader, Context
 from django.http import HttpResponse
+
 from blog.models import BlogPost
-from datetime import datetime
 
 
 def skills(request):
@@ -39,7 +41,8 @@ def save(request, url):
     posts = BlogPost.objects.all()
     for post in posts:
         if post.id == int(url):
-            b = BlogPost(body=request.GET.get('body'), title=request.GET.get('title'), id=post.id, timestamp=datetime.now())
+            b = BlogPost(body=request.GET.get('body'), title=request.GET.get('title'), id=post.id,
+                         timestamp=datetime.now())
             b.save()
             t = loader.get_template("article.html")
             c = Context({'post': b})

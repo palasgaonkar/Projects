@@ -1,42 +1,45 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-		<title>Demo App</title>
+<title>Demo App</title>
 
 
-		<script type="text/javascript" src="./User-Skills_files/dummy.js"></script>
+<script type="text/javascript" src="./User-Skills_files/dummy.js"></script>
 
-		<link rel="stylesheet" type="text/css" href="./User-Skills_files/bootstrap.css"> 
-		<link rel="stylesheet" type="text/css" href="./User-Skills_files/bootstrap.min.css"> 
-		<link rel="stylesheet" type="text/css" href="./User-Skills_files/bootstrap-responsive.css"> 
-		<link rel="stylesheet" type="text/css" href="./User-Skills_files/bootstrap-responsive.min.css">
+<link rel="stylesheet" type="text/css" href="./User-Skills_files/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="./User-Skills_files/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="./User-Skills_files/bootstrap-responsive.css">
+<link rel="stylesheet" type="text/css" href="./User-Skills_files/bootstrap-responsive.min.css">
 
-		<link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css"> 
-		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css">
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.min.css">
 
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=Arvo:400,400italic,700,700italic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet"
+      type="text/css">
 <link href="http://fonts.googleapis.com/css?family=Merienda:700" rel="stylesheet" type="text/css">
 
-<link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css"> 
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script> 
-<script src="http://angular-tips.com/stylesheets/screen.css"></script> 
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-resource.min.js"></script> 
-		<script src="./User-Skills_files/angular.min.js"></script>
-		<script src="./User-Skills_files/angular-resource.min.js"></script> <style></style>
+<link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+<script src="http://angular-tips.com/stylesheets/screen.css"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-resource.min.js"></script>
+<script src="./User-Skills_files/angular.min.js"></script>
+<script src="./User-Skills_files/angular-resource.min.js"></script>
+<style></style>
 
 
-		<script type="text/javascript">
+<script type="text/javascript">
 	        if ($filename ~* ^.*?\.(eot)|(ttf)|(woff)$){
 	        add_header Access-Control-Allow-Origin *;
 	    	}
-    	</script>
+
+</script>
 
 
-		<script type="text/javascript">
+<script type="text/javascript">
 			angular.module('project', ['firebase']).
 			value('fbURL', 'https://temp-project.firebaseio.com/').
 			factory('Projects', function (angularFireCollection, fbURL) {
@@ -107,308 +110,307 @@
 					});
 			}
 			
-		</script>
+
+</script>
 
 
+<style type="text/css">@charset
+    "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak{display:none;}ng\:form{display:block;}
+
+    th {font-size:40px; font-family:"Gochi Hand", sans-serif; color: grey;}
+    td {font-size: 20px; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;}
+    a {font-style: italic;}
+
+    #customers
+    {
+    font-family:Arial, Helvetica, sans-serif;
+    width:100%;
+    border-collapse:collapse;
+    }
+
+    #customers td, #customers th
+    {
+    font-size:20px;
+    border:2px solid #98bf21;
+    padding:3px 7px 2px 7px;
+    }
+
+    #customers th
+    {
+    <!--font-style:oblique;-->
+    font-size:40px;
+    text-align:left;
+    padding-top:5px;
+    padding-bottom:4px;
+    background-color:#A7C942;
+    color: black;
+    font-family:"Gochi Hand";
+    }
+
+    #customers tr.alt td
+    {
+    color:#000000;
+    background-color:#EAF2D3;
+    }
+
+    body {background-image:url('http://www.w3schools.com/css/paper.gif'); margin:30px 30px 30px 100px;}
+
+    .try
+    {
+    position:absolute;
+    left:1000px;
+    top:104px;
+    width: 40%;
+    }
+
+    .temp { position:absolute;
+    left:1600px;
+    top:104px;
+    width: 15%;
+    }
+
+    h1 {font-family:"Gochi Hand"; font-size: 80px; color: grey;}
+    h2 {font-family:"Gochi Hand"; font-size: 50px; color: grey;}
+    input {width:28%;}
+    textarea {width:28%;}
+    table {width:30%;}
+    label {font-size: 20px; font-family:"Gochi Hand", sans-serif; color: grey;}
+
+    .footer {
+    position: fixed;
+    left: 00px;
+    right: 400px;
+    bottom: 00px;
+    background: grey;
+    color: #A7C942;
+    min-width: 100%;
+    min-height: 65px;
+    padding-top: 16px;
+    padding-left: 600px;
+    }
+
+    .footer-links{
+    position: absolute;
+    font-size: 20px;
+    color: #A7C942;
+    }
+
+    .footer-links li a {
+    font-size: 25px;
+    line-height: 25px;
+    color: #A7C942;
+    text-transform: uppercase;
+    text-shadow: 0 -1px 2px #0e0e0e;
+    font-weight: bold;
+    *filter: progid:DXImageTransform.Microsoft.Shadow(color='#000000', Direction=22, Strength=2);
+    *zoom: 1;
+    }
+
+    .footer-links li a:hover {
+    color: dodgerblue;
+    }
+
+    li
+    {
+    display:inline;
+    float:left;
+    width: 200px;
+    display:block;
+    background-color:grey;
+    }
+
+    ul
+    {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    }
+
+    .cf
+    {
+    margin: 0;
+    padding: 0;
+    font-size: 1px;
+    line-height: 0px;
+    clear: both;
+    }
+
+    .validTick
+    {
+    color: green;
+    }
+
+    .icon
+    {
+    position: fixed;
+    right: 20px;
+    bottom: 10px;
+    text-shadow: 1px 1px 1px #ccc;
+    font-size: 5px;
+    }
+
+    .icon-user{background-position:-168px 0}
+
+</style>
+</head>
 
 
+<body>
+<div ng-app="project" class="ng-scope" style="font-family: Verdana; border: auto auto;">
+    <h1>Demo App</h1>
+    <hr style="height:2px; background-color:#A7C942;">
+    <div ng-view="" id="customers">
+        <table class="ng-scope">
+            <thead>
+            <tr>
+                <th><strong>User Name</strong></th>
+                <th><strong>Skills</strong></th>
+                <th><a href="/#/new"><i class="icon-plus-sign"></i></a></th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+
+    <script src="./User-Skills_files/angular.min.js"></script>
+    <script src="./User-Skills_files/angular-resource.min.js"></script>
+    <script src="./User-Skills_files/firebase.js"></script>
+    <script src="./User-Skills_files/angularFire.js"></script>
+    <script src="./User-Skills_files/project.js"></script>
 
 
+    <script type="text/ng-template" id="list.html">
+        <div>
+            <h2>List of users</h2>
+            <hr style="height:2px; background-color:#A7C942;">
+            <input type="text" ng-model="search" class="search-query" placeholder="Search user or skill"><i
+                class="icon-search"> </i> </input>
+            <table>
+                <thead>
+                <tr>
+                    <th>User Name</th>
+                    <th>Skills</th>
+                    <th><a href="#/new"><i class="icon-plus-sign"></i></a></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="project in projects | filter:search | orderBy:'name' | filter:myFilter">
+                    <td><a href="mailto:{{project.$email}}">{{project.name}}</a></td>
+                    <td>{{project.description}}</td>
+                    <td><a href="#/edit/{{project.$id}}"> <i class="icon-pencil"></i> </a></td>
+                </tr>
+                </tbody>
+            </table>
+
+            <div class="try">
+                <h2>Add User</h2>
+                <hr style="height:2px; background-color:#A7C942;">
+                <form name="myForm">
+                    <div class="control-group" ng-class="{error: myForm.name.$invalid}">
+                        <label>User Name</label>
+                        <input type="text" name="name" ng-model="project.name" required placeholder="Username"></input>
+                        <span ng-show="myForm.name.$error.required" class="help-inline"><i class="icon-user"></i></span>
+                        <span ng-show="myForm.name.$error.duplicate"> User exists. </span>
+                        <span ng-show="myForm.name.$valid" class="validTick"><i class="icon-user"></i></span>
+                    </div>
+
+                    <div class="control-group" ng-class="{error: myForm.email.$invalid}">
+                        <label>E-Mail</label>
+                        <input type="email" name="email" ng-model="project.email" required
+                               placeholder="abc@xyz.com"></input>
+                        <span ng-show="myForm.email.$error.required" class="help-inline"><i class="icon-envelope"> </i></span>
+                        <span ng-show="myForm.email.$error.email" class="help-inline"> Not a Mail ID </span>
+                        <span ng-show="myForm.email.$valid" class="validTick"><i class="icon-envelope"></i></span>
+                    </div>
+
+                    <div class="control-group" ng-class="{error: myForm.description.$invalid}">
+                        <label>Skills</label>
+                        <textarea name="description" ng-model="project.description" required
+                                  placeholder="List of skills"></textarea>
+                        <span ng-show="myForm.description.$error.required" class="help-inline"><i class="icon-list"></i></span>
+                        <span ng-show="myForm.description.$valid" class="validTick"><i class="icon-list"></i></span>
+                    </div>
+
+                    <br>
+                    <a href="#/" class="btn"><i class="icon-arrow-left"> </i> Cancel</a>
+                    <button ng-click="save()" ng-disabled="isClean() || myForm.$invalid" class="btn btn-primary"><i
+                            class="icon-save"> </i> Save
+                    </button>
+                    <button ng-click="destroy()" ng-show="project.$id" class="btn btn-danger"
+                    <i class=""><i class="icon-trash"> </i> Delete </button>
+                </form>
+            </div>
+
+            <div class="temp">
+                <h2>Log In</h2>
+                <hr style="height:2px; width:200px; background-color:#A7C942;">
+                <label>Log in to edit</label>
+                <a href="#/login" class="btn btn-primary"><i class="icon-signin"> </i> Log In</a>
+            </div>
+
+            <div class="footer">
+                <ul class="footer-links">
+                    <li><a href="#"> <i class="icon-home"></i>Home</a></li>
+                    <li><a href="mailto:vishal.palasgaonkar@searce.com"><i class="icon-book"></i>Contact</a></li>
+                </ul>
+                <div class="icon">
+                    <a href="#/" class="btn btn-info" style="background-color: grey;"><i
+                            class="icon-facebook-sign"> </i> Like</a>
+                    <a href="#/" class="btn btn-info" style="background-color: grey;"><i
+                            class="icon-google-plus-sign"> </i> +1</a>
+                    <a href="#/" class="btn btn-info" style="background-color: grey;"><i class="icon-twitter-sign"> </i>
+                        Tweet</a>
+                </div>
 
 
+                <br>
+
+                <!-- &copy; Copyright <a style="margin-right: 20px;" href="#">Back to top</a>-->
+            </div>
+
+    </script>
 
 
-
-
-		<style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak{display:none;}ng\:form{display:block;}
-		
-			th {font-size:40px; font-family:"Gochi Hand", sans-serif; color: grey;}
-			td {font-size: 20px; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;}
-			a {font-style: italic;}
-			
-			#customers
-			{
-				font-family:Arial, Helvetica, sans-serif;
-				width:100%;
-				border-collapse:collapse;
-			}
-
-			#customers td, #customers th 
-			{
-				font-size:20px;
-				border:2px solid #98bf21;
-				padding:3px 7px 2px 7px;
-			}
-
-			#customers th 
-			{
-				<!--font-style:oblique;-->
-				font-size:40px;
-				text-align:left;
-				padding-top:5px;
-				padding-bottom:4px;
-				background-color:#A7C942;
-				color: black;
-				font-family:"Gochi Hand";
-			}
-
-			#customers tr.alt td 
-			{
-				color:#000000;
-				background-color:#EAF2D3;
-			}
-
-			body {background-image:url('http://www.w3schools.com/css/paper.gif'); margin:30px 30px 30px 100px;} 
-
-			.try 
-			{ 
-				position:absolute;
-				left:1000px;
-				top:104px;
-				width: 40%;
-			}
-
-			.temp { position:absolute;
-				left:1600px;
-				top:104px;
-				width: 15%;
-			}
-
-			h1 {font-family:"Gochi Hand"; font-size: 80px; color: grey;}
-			h2 {font-family:"Gochi Hand"; font-size: 50px; color: grey;}
-			input {width:28%;}
-			textarea {width:28%;}
-			table {width:30%;}
-			label {font-size: 20px; font-family:"Gochi Hand", sans-serif; color: grey;}
-			
-			.footer {
-				position: fixed;
-				left: 00px;
-				right: 400px;
-				bottom: 00px;
-				background: grey;
-				color: #A7C942;
-				min-width: 100%;
-				min-height: 65px;
-				padding-top: 16px;
-				padding-left: 600px;
-			}
-
-			.footer-links{
-				position: absolute;
-				font-size: 20px;
-				color: #A7C942;
-			}
-
-			.footer-links li a {
-				font-size: 25px;
-				line-height: 25px;
-				color: #A7C942;
-				text-transform: uppercase;
-				text-shadow: 0 -1px 2px #0e0e0e;
-				font-weight: bold;
-				*filter: progid:DXImageTransform.Microsoft.Shadow(color='#000000', Direction=22, Strength=2);
-				*zoom: 1;
-			}
-
-			.footer-links li a:hover {
-				color: dodgerblue;
-			}
-
-			li
-			{
-				display:inline;
-				float:left;
-				width: 200px;
-				display:block;
-				background-color:grey;
-			}
-
-			ul
-			{
-				list-style-type:none;
-				margin:0;
-				padding:0;
-				overflow:hidden;
-			}
-
-			.cf
-			{
-				margin: 0;
-				padding: 0;
-				font-size: 1px;
-				line-height: 0px;
-				clear: both;
-			}
-
-			.validTick
-			{
-				color: green;
-			}
-
-			.icon
-			{	
-				position: fixed;
-				right: 20px;
-				bottom: 10px;
-				text-shadow: 1px 1px 1px #ccc;
-    			font-size: 5px;
-			}
-
-			.icon-user{background-position:-168px 0}
-
-		</style>
-	</head>
-
-
-	<body>
-	  	<div ng-app="project" class="ng-scope" style="font-family: Verdana; border: auto auto;">
-			<h1>Demo App</h1>  
-			<hr style="height:2px; background-color:#A7C942;">
-		<div ng-view="" id="customers">
-			<table class="ng-scope">
-				<thead>
-					<tr>
-						<th><strong>User Name</strong></th>
-						<th><strong>Skills</strong></th>
-						<th><a href="/#/new"><i class="icon-plus-sign"></i></a></th>                 
-					</tr>
-				</thead>
-			</table>
-		</div>
-		  
-		<script src="./User-Skills_files/angular.min.js"></script>
-		<script src="./User-Skills_files/angular-resource.min.js"></script>
-		<script src="./User-Skills_files/firebase.js"></script>
-		<script src="./User-Skills_files/angularFire.js"></script>
-		<script src="./User-Skills_files/project.js"></script>
-	  
-
-
-		<script type="text/ng-template" id="list.html">
-		<div>
-			<h2>List of users</h2>
-			<hr style="height:2px; background-color:#A7C942;">
-			<input type="text" ng-model="search" class="search-query" placeholder="Search user or skill"><i class="icon-search" > </i> </input>
-			<table>
-				<thead>
-					<tr>
-						<th>User Name</th>
-						<th>Skills</th>
-						<th><a href="#/new"><i class="icon-plus-sign"></i></a></th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr ng-repeat="project in projects | filter:search | orderBy:'name' | filter:myFilter">
-						<td><a href="mailto:{{project.$email}}">{{project.name}}</a></td>
-						<td>{{project.description}}</td>
-						<td><a href="#/edit/{{project.$id}}"> <i class="icon-pencil"></i> </a></td>
-					</tr>
-				</tbody>
-			</table>
-			
-		<div class="try">   
-			<h2>Add User</h2> 
-			<hr style="height:2px; background-color:#A7C942;">
-			<form name="myForm">
-				<div class="control-group" ng-class="{error: myForm.name.$invalid}">
-					<label >User Name</label>
-					<input type="text" name="name" ng-model="project.name" required placeholder="Username" ></input>
-					<span ng-show="myForm.name.$error.required" class="help-inline"><i class="icon-user"></i></span>
-					<span ng-show="myForm.name.$error.duplicate"> User exists. </span>
-                    <span ng-show="myForm.name.$valid" class="validTick"><i class="icon-user"></i></span>
-				</div>
-
-				<div class="control-group" ng-class="{error: myForm.email.$invalid}">
-					<label>E-Mail</label>
-					<input type="email" name="email" ng-model="project.email" required placeholder="abc@xyz.com" ></input>
-					<span ng-show="myForm.email.$error.required" class="help-inline"><i class="icon-envelope"> </i></span>
-					<span ng-show="myForm.email.$error.email" class="help-inline"> Not a Mail ID </span>
-                    <span ng-show="myForm.email.$valid" class="validTick"><i class="icon-envelope"></i></span>
-				</div>
-
-				<div class="control-group" ng-class="{error: myForm.description.$invalid}">
-					<label>Skills</label>
-					<textarea name="description" ng-model="project.description" required placeholder="List of skills"></textarea>
-					<span ng-show="myForm.description.$error.required" class="help-inline"><i class="icon-list"></i></span>
-                    <span ng-show="myForm.description.$valid" class="validTick"><i class="icon-list"></i></span>
-				</div>
-				
-				<br>
-				<a href="#/" class="btn"><i class="icon-arrow-left"> </i> Cancel</a>
-				<button ng-click="save()" ng-disabled="isClean() || myForm.$invalid" class="btn btn-primary"><i class="icon-save"> </i> Save</button>
-				<button ng-click="destroy()" ng-show="project.$id" class="btn btn-danger" <i class=""><i class="icon-trash"> </i> Delete </button>
-			</form>
-			</div>						
-		
-		<div class="temp">
-			<h2>Log In</h2> 
-			<hr style="height:2px; width:200px; background-color:#A7C942;">		
-			<label>Log in to edit</label>	
-			<a href="#/login" class="btn btn-primary" ><i class="icon-signin"> </i> Log In</a> 
-				</div>
-		        
-			<div class="footer">
-	            <ul class="footer-links">
-	                <li ><a href="#"> <i class="icon-home"></i>Home</a></li>
-	                <li ><a href="mailto:vishal.palasgaonkar@searce.com"><i class="icon-book"></i>Contact</a></li>
-	            </ul>
-	            <div class="icon">
-		            <a href="#/" class="btn btn-info" style="background-color: grey;"><i class="icon-facebook-sign" > </i> Like</a>
-		            <a href="#/" class="btn btn-info" style="background-color: grey;"><i class="icon-google-plus-sign"> </i> +1</a>
-		            <a href="#/" class="btn btn-info" style="background-color: grey;"><i class="icon-twitter-sign"> </i> Tweet</a>
-		        </div>
-
-	            
-	            <br>
-	                    
-					<!-- &copy; Copyright <a style="margin-right: 20px;" href="#">Back to top</a>-->
-	        </div>
-
-		  </script>
-
-
-
-
-
-
-	<script type="text/ng-template" id="login.html"> 
-		<div class="temp">   
-			<h2>Log In</h2> 
-			<hr style="height:2px; width:100px; background-color:#A7C942;">
-			<form name="loginForm">
-				<div class="control-group" ng-class="{error: loginForm.name.$invalid}">
-					<label >User Name</label>
-					<input type="text" name="name" ng-model="project.name" required placeholder="User name"></input>
-					<span ng-show="loginForm.name.$error.required" class="help-inline">  <i class="icon-user"> </i></span>
+    <script type="text/ng-template" id="login.html">
+        <div class="temp">
+            <h2>Log In</h2>
+            <hr style="height:2px; width:100px; background-color:#A7C942;">
+            <form name="loginForm">
+                <div class="control-group" ng-class="{error: loginForm.name.$invalid}">
+                    <label>User Name</label>
+                    <input type="text" name="name" ng-model="project.name" required placeholder="User name"></input>
+                    <span ng-show="loginForm.name.$error.required" class="help-inline">  <i
+                            class="icon-user"> </i></span>
                     <span ng-show="loginForm.name.$valid" class="validTick"> <i class="icon-user"> </i> </span>
-				</div>
+                </div>
 
-				<div class="control-group" ng-class="{error: loginForm.password.$invalid}">
-					<label>Password</label>
-					<input type="Password" name="password" ng-model="project.password" required placeholder="Password"></input>
-					<span ng-show="loginForm.password.$error.required" class="help-inline"> <i class="icon-key"> </i></span>
+                <div class="control-group" ng-class="{error: loginForm.password.$invalid}">
+                    <label>Password</label>
+                    <input type="Password" name="password" ng-model="project.password" required
+                           placeholder="Password"></input>
+                    <span ng-show="loginForm.password.$error.required" class="help-inline"> <i
+                            class="icon-key"> </i></span>
                     <span ng-show="loginForm.password.$valid" class="validTick"> <i class="icon-key"> </i> </span>
-				</div>
-			
-				<br>
-				<a href="#/" class="btn"><i class="icon-arrow-left"> </i> Cancel</a>
-				<a href="#/login/{{project.$id}}" ng-disabled="isClean() || loginForm.$invalid "
-			  			 class="btn btn-primary"><i class="icon-signin"> </i> Log In</a>
-			</form>
-		</div>
-			
+                </div>
+
+                <br>
+                <a href="#/" class="btn"><i class="icon-arrow-left"> </i> Cancel</a>
+                <a href="#/login/{{project.$id}}" ng-disabled="isClean() || loginForm.$invalid "
+                   class="btn btn-primary"><i class="icon-signin"> </i> Log In</a>
+            </form>
+        </div>
+
         <div class="footer clearfix">
             <ul class="footer-links">
-                <li ><a href="#"><i class="icon-home"></i>Home</a></li>
-                <li ><a href="mailto:vishal.palasgaonkar@searce.com"><i class="icon-book"> </i> Contact</a></li>
+                <li><a href="#"><i class="icon-home"></i>Home</a></li>
+                <li><a href="mailto:vishal.palasgaonkar@searce.com"><i class="icon-book"> </i> Contact</a></li>
             </ul>
             <br>
             <br>
-			<!--	&copy; Copyright -->
-        </div>   
-	</script>
+            <!--	&copy; Copyright -->
+        </div>
+    </script>
 
-		</div>
-	</body>
+</div>
+</body>
 </html>
