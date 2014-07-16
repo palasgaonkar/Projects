@@ -8,8 +8,7 @@ from blog.models import BlogPost
 
 def skills(request):
     t = loader.get_template("try-skills.html")
-    c = Context()
-    return HttpResponse(t.render(c))
+    return HttpResponse(t.render)
 
 
 def archive(request):
