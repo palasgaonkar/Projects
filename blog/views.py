@@ -1,4 +1,4 @@
-from datetime import datetime
+from django.utils import timezone
 
 from django.template import loader, Context
 from django.http import HttpResponse
@@ -41,7 +41,7 @@ def save(request, url):
     for post in posts:
         if post.id == int(url):
             b = BlogPost(body=request.GET.get('body'), title=request.GET.get('title'), id=post.id,
-                         timestamp=datetime.now())
+                         timestamp=timezone.now())
             b.save()
             t = loader.get_template("article.html")
             c = Context({'post': b})
@@ -63,6 +63,6 @@ def new(request):
 
 
 def create(request):
-    b = BlogPost(body=request.GET.get('body'), title=request.GET.get('title'), timestamp=datetime.now())
+    b = BlogPost(body=request.GET.get('body'), title=request.GET.get('title'), timestamp=timezone.now())
     b.save()
     return archive(request)
