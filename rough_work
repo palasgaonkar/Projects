@@ -1,0 +1,11 @@
+Charge Code	Charge Code Description	Charge Code Type	Charge Code Category	Charge Code Status
+C-FCL	FCL Freight Ocean Cost	Freight Charge	Expence	Enable
+C-ACC	Accommodation Cost      	Accessorial Charges	Expense	Enable
+R-ACC	Accommodation Revenue      	Accessorial Charges	Revenue	Enable
+C-ACI	Additional Customs Items Cost    	Custom Charges	Expense	Enable
+R-ACI	Additional Customs Items Revenue    	Custom Charges	Revenue	Enable
+C-ADC	Airline Delivery Cost     	Accessorial Charges	Expense	Enable
+C-ADG	Aden Gulf Surcharge Cost    	Surcharge	Expense	Enable
+R-ADG	Aden Gulf Surcharge Revenue    	Surcharge	Revenue	Enable
+
+

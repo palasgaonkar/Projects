@@ -1,0 +1,160 @@
+#!/usr/bin/env python
+# -*- coding: ascii -*-
+
+"""
+dayBook.module
+~~~~~~~~~~~~~
+
+
+
+"""
+__author__ = "Vishal Palasgaonkar"
+__copyright__ = "Copyright 2013, Searce"
+__credits__ = ["Vishal Palasgaonkar"]
+__version__ = "1.0.0"
+__maintainer__ = "Vishal Palasgaonkar"
+__email__ = "vishal.palasgaonkar@searce.com"
+__status__ = "Development"
+
+
+import json
+from lib.log import logging
+from generic import authenticate, authorise, GenericCRUD
+from ruleBook import RuleBook
+from exceptions import DuplicateError, NotFoundError, ValidationError
+from bson import ObjectId
+from django.http import HttpResponse
+import csv
+import xlrd
+import datetime
+import os
+import copy
+import shutil
+
+
+def dayBookRequest(request):
+    """
+        This function performs URL matching and calls the particular function.
+    """
+    c = Parse(request)
+    return c.parseXls()
+
+
+class Parse(GenericCRUD):
+    def __init__(self, request):
+        """
+            This constructor sets collection name, creates an object of database.
+        """
+        super(Parse, self).__init__(request)
+        self.collection = self.getCookieData('user')['organization'] + 'RawData'
+
+    def columnize(self, A, i):
+        """
+            This method converts a row in the document into a dictionary with first row forming the keys.
+            It also converts any date value into DATE format.
+        """
+        doc = {}
+        for index in xrange(len(A.row_values(0))):
+            if 'DATE' in A.row_values(0)[index] and A.row_values(i)[index]:
+                g, d = divmod(A.row_values(i)[index], 1)
+                g = int(g)
+                d = int(d)
+                if d == 0:
+                    d = '000000'
+                doc.update({A.row_values(0)[index]: datetime.datetime.strptime(str(g) + str(d), '%Y%m%d%H%M%S')})
+            else:
+                doc.update({A.row_values(0)[index]: A.row_values(i)[index] if A.row_values(i)[index] else None})
+        return doc
+
+    def document(self, doc):
+        """
+            This method appends details to the document.
+        """
+        return {'data': doc, 'reportName': 'daybook',
+                'receivedOn': datetime.datetime.strftime(datetime.date.today(), "%m/%d/%Y"), 'sheet': 'A',
+                'tag': {'status': 'unbilled'}}
+
+    # def getUniqueKeyIndex(self, fileName):
+    #     """
+    #           This method returns the index of the unique key "BOKPRT"
+    #     """
+    #     outfile = xlrd.open_workbook(fileName)
+    #     file = outfile.sheet_by_index(0)
+    #     index = 0
+    #     for i in file.ncols:
+    #         if file.row_values(0)[i] == 'BOKPRT':
+    #             index = i
+    #     return index
+
+    def parseXls(self):
+        """
+            This method parses xls format
+        """
+        try:
+            path = '/home/Searce.FTPUser/DayBookF'
+            for dayBookFile in os.listdir(path):
+                outfile = xlrd.open_workbook(dayBookFile)
+                A = outfile.sheet_by_index(0)
+                for i in xrange(A.nrows-1):
+                    # Check if document is repeated.
+                    if not self.isDuplicate({"data.BOKPRT": A.row_values(i+1)[5]},
+                                            self.getCookieData('user')['organization'] + 'RawData'):
+                        self.insertDocument(self.document(self.columnize(A, i+1)))
+                shutil.move('.', './archive')
+
+            path = '/home/Searce.FTPUser/InvAudit'
+            for auditFile in os.listdir(path):
+                infile = xlrd.open_workbook(auditFile)
+                B = infile.sheet_by_index(0)
+                col = B.col_values(7)
+                col.append("DG104-0075448")
+                col.append("DG102-0007458")
+                self.updateReport({"data.BOKPRT": {"$in": col}},
+                                  {'$set': {"tag.status": "billed"}}
+                )
+                shutil.move('.', './archive')
+
+            self.collection = self.getCookieData('user')['organization'] + 'Rule'
+            self.exclude = ['']
+            self.listDocument(0,0,{'ruleType': 'metadata_dayBookF'})
+            self.collection = self.getCookieData('user')['organization'] + 'RawData'
+            r = RuleBook()
+            rules = self.doc
+            for rule in rules:
+                ruleDef = copy.deepcopy(rule.get('ruleDef'))
+                query = r.ruleBook(ruleDef, 'data.')
+                self.listDocument(0,0,query)
+                for doc in self.doc:
+                    if rule.get('isField'):
+                        for field in rule['ruleDef']['fields']:
+                            doc['tag'].update({field.get('name'): doc['data'][(field.get('matchField'))]})
+                    elif not rule.get('isField'):
+                        for field in rule['ruleDef']['fields']:
+                            doc['tag'].update({field.get('name'): field.get('value')})
+                    self.updateDocument(doc, ObjectId(doc.get('id')))
+            return self.response(self.doc)
+        except ValidationError, e:
+            logging.error(e)
+            return self.response({"msg": e.message}, 412)
+        except DuplicateError, e:
+            logging.error(e)
+            return self.response({"msg": e.message}, 412)
+        except Exception, e:
+            logging.error(e)
+            return self.response({"msg": "An error occurred"}, 412)
+
+    def parseCsv(self, fname1, fname2):
+        """
+
+        """
+        try:
+            with open(fname1, 'r') as outfile:
+                reader = csv.reader(outfile, delimiter="\t")
+                d = list(reader)
+                doc = {}
+                for i in range(len(d[0])):
+                    doc.update({d[0][i]: d[1][i]})
+            return self.response(doc)
+        except Exception, e:
+            logging.error(e)
+            return self.response({"msg": ""}, 412)

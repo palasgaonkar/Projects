@@ -1,0 +1,25 @@
+# Import the modules
+import json
+
+import requests
+
+
+# Make it a bit prettier..
+print "=" * 50
+print "This will show the Most Popular Videos on YouTube"
+print "=" * 50
+
+# Get the feed
+r = requests.get("http://gdata.youtube.com/feeds/api/standardfeeds/top_rated?v=2&alt=jsonc")
+
+# Convert it to a Python dictionary
+data = json.loads(r.text)
+
+# Loop through the result.
+for item in data['data']['items']:
+    print "Video Title:", item['title']
+    print "Video Category:", item['category']
+    print "Video ID:", item['id']
+    print "Video Rating:", item['rating']
+    print "Embed URL:", item['player']['default']
+    print

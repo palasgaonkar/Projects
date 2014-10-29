@@ -1,0 +1,120 @@
+[2014-04-25 15:51:22,963: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/celery/apps/worker.py:161: CDeprecationWarning: 
+Starting from version 3.2 Celery will refuse to accept pickle by default.
+
+The pickle serializer is a security concern as it may give attackers
+the ability to execute any command.  It's important to secure
+your broker from unauthorized access when using pickle, so we think
+that enabling pickle should require a deliberate action and not be
+the default choice.
+
+If you depend on pickle then you should set a setting to disable this
+warning and to be sure that everything will continue working
+when you upgrade to Celery 3.2::
+
+    CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+
+You must only enable the serializers that you will actually use.
+
+
+  warnings.warn(CDeprecationWarning(W_PICKLE_DEPRECATED))
+[2014-04-25 15:51:22,979: INFO/MainProcess] Connected to mongodb://122.248.234.221:27017/Invoize
+[2014-04-25 15:51:25,232: WARNING/MainProcess] celery@sla-396 ready.
+[2014-04-25 16:06:50,185: INFO/MainProcess] Received task: proj.tasks.add[3c48f6d8-b741-4352-8681-6846f9ca224c]
+[2014-04-25 16:06:51,558: INFO/MainProcess] Task proj.tasks.add[3c48f6d8-b741-4352-8681-6846f9ca224c] succeeded in 1.371520577s: 4
+[2014-04-25 16:08:08,626: INFO/MainProcess] Received task: proj.tasks.add[3fcf0990-f885-4237-924a-b5206bbf3304]
+[2014-04-25 16:08:08,914: INFO/MainProcess] Task proj.tasks.add[3fcf0990-f885-4237-924a-b5206bbf3304] succeeded in 0.287068065954s: 47
+[2014-04-25 16:08:47,102: INFO/MainProcess] Received task: proj.tasks.add[d8b0a535-e53c-42d8-9d0d-af3d7fba24b6]
+[2014-04-25 16:08:47,461: INFO/MainProcess] Task proj.tasks.add[d8b0a535-e53c-42d8-9d0d-af3d7fba24b6] succeeded in 0.357438654173s: 47
+[2014-04-27 08:49:53,760: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/celery/worker/consumer.py", line 278, in start
+    blueprint.start(self)
+  File "/usr/local/lib/python2.7/dist-packages/celery/bootsteps.py", line 123, in start
+    step.start(parent)
+  File "/usr/local/lib/python2.7/dist-packages/celery/worker/consumer.py", line 796, in start
+    c.loop(*c.loop_args())
+  File "/usr/local/lib/python2.7/dist-packages/celery/worker/loops.py", line 99, in synloop
+    connection.drain_events(timeout=2.0)
+  File "/usr/local/lib/python2.7/dist-packages/kombu/connection.py", line 279, in drain_events
+    return self.transport.drain_events(self.connection, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/kombu/transport/virtual/__init__.py", line 830, in drain_events
+    item, channel = get(timeout=timeout)
+  File "/usr/local/lib/python2.7/dist-packages/kombu/transport/virtual/scheduling.py", line 39, in get
+    return self.fun(resource, **kwargs), resource
+  File "/usr/local/lib/python2.7/dist-packages/kombu/transport/virtual/__init__.py", line 850, in _drain_channel
+    return channel.drain_events(timeout=timeout)
+  File "/usr/local/lib/python2.7/dist-packages/kombu/transport/virtual/__init__.py", line 642, in drain_events
+    return self._poll(self.cycle, timeout=timeout)
+  File "/usr/local/lib/python2.7/dist-packages/kombu/transport/virtual/__init__.py", line 328, in _poll
+    return cycle.get()
+  File "/usr/local/lib/python2.7/dist-packages/kombu/transport/virtual/scheduling.py", line 39, in get
+    return self.fun(resource, **kwargs), resource
+  File "/usr/local/lib/python2.7/dist-packages/kombu/transport/mongodb.py", line 59, in _get
+    sort={'_id': pymongo.ASCENDING}, remove=True,
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/database.py", line 391, in command
+    result = self["$cmd"].find_one(command, **extra_opts)
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/collection.py", line 604, in find_one
+    for result in self.find(spec_or_id, *args, **kwargs).limit(-1):
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/cursor.py", line 904, in next
+    if len(self.__data) or self._refresh():
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/cursor.py", line 848, in _refresh
+    self.__uuid_subtype))
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/cursor.py", line 782, in __send_message
+    res = client._send_message_with_response(message, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/mongo_client.py", line 1051, in _send_message_with_response
+    raise AutoReconnect(str(e))
+AutoReconnect: [Errno 110] Connection timed out
+[2014-04-27 08:49:55,508: INFO/MainProcess] Connected to mongodb://122.248.234.221:27017/Invoize
+[2014-04-27 08:49:56,809: ERROR/MainProcess] Unrecoverable error: KeyError(u'celery@sla-396.celery.pidbox',)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/celery/worker/__init__.py", line 206, in start
+    self.blueprint.start(self)
+  File "/usr/local/lib/python2.7/dist-packages/celery/bootsteps.py", line 123, in start
+    step.start(parent)
+  File "/usr/local/lib/python2.7/dist-packages/celery/bootsteps.py", line 373, in start
+    return self.obj.start()
+  File "/usr/local/lib/python2.7/dist-packages/celery/worker/consumer.py", line 278, in start
+    blueprint.start(self)
+  File "/usr/local/lib/python2.7/dist-packages/celery/bootsteps.py", line 123, in start
+    step.start(parent)
+  File "/usr/local/lib/python2.7/dist-packages/celery/worker/pidbox.py", line 46, in start
+    self.consumer = self.node.listen(callback=self.on_message)
+  File "/usr/local/lib/python2.7/dist-packages/kombu/pidbox.py", line 94, in listen
+    on_decode_error=self.on_decode_error)
+  File "/usr/local/lib/python2.7/dist-packages/kombu/pidbox.py", line 81, in Consumer
+    **options
+  File "/usr/local/lib/python2.7/dist-packages/kombu/messaging.py", line 359, in __init__
+    self.revive(self.channel)
+  File "/usr/local/lib/python2.7/dist-packages/kombu/messaging.py", line 371, in revive
+    self.declare()
+  File "/usr/local/lib/python2.7/dist-packages/kombu/messaging.py", line 381, in declare
+    queue.declare()
+  File "/usr/local/lib/python2.7/dist-packages/kombu/entity.py", line 505, in declare
+    self.queue_declare(nowait, passive=False)
+  File "/usr/local/lib/python2.7/dist-packages/kombu/entity.py", line 531, in queue_declare
+    nowait=nowait)
+  File "/usr/local/lib/python2.7/dist-packages/kombu/transport/virtual/__init__.py", line 447, in queue_declare
+    return queue_declare_ok_t(queue, self._size(queue), 0)
+  File "/usr/local/lib/python2.7/dist-packages/kombu/transport/mongodb.py", line 75, in _size
+    return (self._queue_cursors[queue].count() -
+KeyError: u'celery@sla-396.celery.pidbox'
+ 
+ -------------- celery@sla-396 v3.1.9 (Cipater)
+---- **** ----- 
+--- * ***  * -- Linux-3.5.0-17-generic-i686-with-Ubuntu-12.10-quantal
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         proj:0xa1742ec
+- ** ---------- .> transport:   mongodb://122.248.234.221:27017/Invoize
+- ** ---------- .> results:     disabled
+- *** --- * --- .> concurrency: 4 (prefork)
+-- ******* ---- 
+--- ***** ----- [queues]
+ -------------- .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . proj.tasks.add
+  . proj.tasks.mul
+  . proj.tasks.xsum
+
