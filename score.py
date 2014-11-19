@@ -1,11 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: ascii -*-
 import urllib2
-import time
 import Tkinter
 import tkMessageBox
-from BeautifulSoup import BeautifulSoup
 import webbrowser
+
+from BeautifulSoup import BeautifulSoup
+
 
 top = Tkinter.Tk()
 
@@ -17,7 +18,9 @@ def success(data):
     tkMessageBox.showinfo(heading, text)
     return
 
+
 from time import sleep
+
 wickets1 = -1
 flag = 0
 while True:
@@ -34,7 +37,8 @@ while True:
                 if flag:
                     if int(word) > wickets1:
                         if wickets1 != -1:
-                            webbrowser.open('https://www.google.co.in/?gws_rd=ssl#q=indian+cricket+team', new=1, autoraise=True)
+                            webbrowser.open('https://www.google.co.in/?gws_rd=ssl#q=indian+cricket+team', new=1,
+                                            autoraise=True)
                             # success(score.split(':'))
                         wickets1 = int(word)
                         flag = 0

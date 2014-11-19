@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: ascii -*-
 
 import urllib
 import urllib2
