@@ -1,0 +1,15 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+{% if user.is_authenticated %}
+    <h2>Welcome, {{ user.username }}</h2>
+{% endif %}
+{% for post in posts %}
+<h2><a href='/portal/article/{{ post.id }}/'>{{ post.title }}</a></h2>
+<p>{{ post.timestamp }}</p>
+{% endfor %}
+{% if user.is_authenticated %}
+    <h3><a href='/portal/new/'>Add new</a></h3>
+    <h3><a href="/logout/">logout</a></h3>
+{% endif %}
+{% endblock %}

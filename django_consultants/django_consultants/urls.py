@@ -1,5 +1,6 @@
 from django_consultants.views import *
 from django.conf.urls.defaults import *
+from portal.views import *
 
 urlpatterns = patterns('',
     (r'^$', main_page),
@@ -14,4 +15,6 @@ urlpatterns = patterns('',
     # Serve static content.
     (r'^static/(?P<path>.*)$', 'django.views.static.serve',
         {'document_root': 'static'}),
+
+
 )

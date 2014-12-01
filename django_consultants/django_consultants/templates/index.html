@@ -1,18 +1,14 @@
-{% extends "base.html" %}
-{% comment %}
-  Main page of django_consultant's website.
-{% endcomment %}
-
-{% block head %}
-  <title>Django Consultants</title>
-{% endblock %}
-
-{% block body %}
-  <header>
-      <h1>Django Consultants</h1>
-  </header>
-
+{% extends "blog/base.html" %}
+{% block content %}
+{% for post in posts %}
+<h2><a href='/portal/article/{{ post.id }}/'>{{ post.title }}</a></h2>
+<p>{{ post.timestamp }}</p>
+{% endfor %}
+<br>
+<br>
+<br>
+<br>
   <section>
-      <p>Welcome to Django Consultants. Please click <a href="/login/">here</a> to log into our web portal.</p>
+      <p>Admin? Log in <a href="/login/">here</a>.</p>
   </section>
 {% endblock %}
