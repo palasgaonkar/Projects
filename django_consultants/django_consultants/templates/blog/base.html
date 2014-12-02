@@ -6,9 +6,16 @@
     h3 { color: #b08; border-top: 1px dotted #fff; margin-top: 2em }
     p { margin: 1em 0 }
 </style>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    {% block head %}
+        <title>Musings</title>
+    {% endblock %}
+</head>
 <body>
-<h1>Blog</h1>
-{% block content %}
-{% endblock %}
+    <h1>Musings of a restless mind</h1>
+    {% block content %}
+    {% endblock %}
+    {% block body %}{% endblock %}
 </body>
 </html>
